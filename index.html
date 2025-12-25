@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <title>PDF連続文字集計 - ファイル名表示付</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>PDF連続文字 集計リスト</h1>
+
+    <div class="controls">
+      <div id="drop-zone">
+        PDFをドロップまたはクリックで選択
+        <input
+          type="file"
+          id="pdf-upload"
+          style="display: none"
+          accept=".pdf"
+        />
+      </div>
+
+      <div class="search-box">
+        <label for="filter-char">特定の文字で絞り込み:</label>
+        <input type="text" id="filter-char" placeholder="例: Ｗ" />
+      </div>
+    </div>
+
+    <div class="info-bar">
+      <div>ファイル名: <span id="file-name">未選択</span></div>
+      <div id="status">PDFを読み込んでください</div>
+    </div>
+
+    <div id="result-area"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
