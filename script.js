@@ -88,9 +88,13 @@ async function processPDF(file) {
 
   try {
     const arrayBuffer = await file.arrayBuffer();
+
+    const baseUrl = window.location.href.split('#')[0].split('?')[0];
+    const cMapUrl = baseUrl.endsWith('/') ? `${baseUrl}cmaps/` : `${baseUrl}/cmaps/`;
+    
     const pdf = await pdfjsLib.getDocument({
       data: arrayBuffer,
-      cMapUrl: "./cmaps/",
+      cMapUrl: cMapUrl,
       cMapPacked: true,
     }).promise;
 
