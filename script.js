@@ -90,7 +90,7 @@ async function processPDF(file) {
     const arrayBuffer = await file.arrayBuffer();
     const pdf = await pdfjsLib.getDocument({
       data: arrayBuffer,
-      cMapUrl: "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/cmaps/",
+      cMapUrl: "./cmaps/",
       cMapPacked: true,
     }).promise;
 
